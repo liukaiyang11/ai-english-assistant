@@ -108,7 +108,7 @@
 - **Web端**: React + TypeScript
 
 ### 后端技术栈
-- **API服务**: Node.js/Python FastAPI
+- **API服务**: Python FastAPI
 - **数据库**: PostgreSQL + Redis
 - **AI服务**: 
   - 翻译: Google Translate API / OpenAI API
@@ -116,8 +116,8 @@
   - OCR: Tesseract / Azure Computer Vision
 
 ### AI能力集成
-- **LangGraph**: 构建英语学习知识图谱
-- **CrewAI**: 多Agent协作的学习助手
+- **LightRAG**: 构建英语学习知识图谱
+- **CrewAI + LangGraph**: 多Agent协作的学习助手
 - **语言模型**: GPT-4 / Claude用于语境分析
 
 ## 商业模式

@@ -31,8 +31,9 @@
 
 **技术栈**:
 - 前端: React + TypeScript + Vite
-- 后端: Node.js/Go + Express/Gin
+- 后端: Python + FastAPI + Uvicorn
 - 数据库: SQLite + Redis + Qdrant + MinIO
+- Agent框架: CrewAI (MVP阶段)
 - 部署: Docker Compose + Vercel/Railway
 - AI: 免费API组合（智谱AI、讯飞星火等）
 
@@ -52,6 +53,7 @@
 **技术栈**:
 - 架构: 微服务 + API网关 + 服务网格
 - 数据库: PostgreSQL集群 + Redis集群 + Qdrant集群
+- Agent框架: CrewAI + LangGraph (渐进式引入)
 - 存储: 云存储 + CDN
 - 监控: Prometheus + Grafana + ELK
 - 部署: Kubernetes + Docker
@@ -72,6 +74,7 @@
 **技术栈**:
 - 架构: 云原生微服务 + 服务网格 + 边缘计算
 - 数据库: 分布式PostgreSQL + Redis + Milvus + ClickHouse
+- Agent框架: LangGraph主导 + CrewAI协作
 - 基础设施: Kubernetes + Istio + Prometheus + Jaeger
 - 安全: 零信任架构 + Vault + 端到端加密
 - AI: 多模型智能路由 + 成本优化
