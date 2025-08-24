@@ -67,7 +67,7 @@
 - **ORM**: SQLAlchemy + Alembic
 - **API**: RESTful + WebSocket
 - **认证**: JWT + Refresh Token
-- **优势**: 与AI/ML生态系统完美集成，支持LightRAG、AutoGen等AI库，开发效率高
+- **优势**: 与AI/ML生态系统完美集成，支持CrewAI、LangGraph等AI库，开发效率高
 
 #### 数据存储
 

@@ -5,37 +5,38 @@
 基于对 `ai_english_assistant` 项目的深入分析，该项目旨在构建一个智能英语学习助手，具有以下核心需求：
 
 - **多模态交互**：支持文本、语音、图像等多种输入方式
-- **知识图谱集成**：基于LightRAG构建词汇知识图谱
+- **知识图谱集成**：基于LangGraph构建词汇知识图谱
 - **多Agent协作**：翻译、学习、复习等不同功能模块
 - **成本敏感**：个人开发者需要控制开发和运营成本
 - **快速迭代**：MVP优先，零成本启动，平滑扩展
 
 ## 框架深度对比分析
 
-### 1. AutoGen (Microsoft)
+### 1. CrewAI
 
 #### 技术特点
-- **架构**：基于对话的多Agent系统，支持用户Agent和助手Agent角色 <mcreference link="https://llmtrend.com/ai-agent-2/" index="1">1</mcreference>
+- **架构**：基于角色的Agent协作系统，模拟人类团队协作 <mcreference link="https://llmtrend.com/ai-agent-2/" index="1">1</mcreference>
 - **核心优势**：
-  - 强大的代码生成和执行能力
-  - 支持人机协作（HITL）
-  - 微软生态支持，社区活跃
-  - 模块化设计，支持自定义Agent角色
+  - 操作直观，主要依靠提示词配置 <mcreference link="https://my.oschina.net/IDP/blog/16578213" index="3">3</mcreference>
+  - 快速原型开发，几分钟创建多个Agent
+  - 与LangChain深度集成
+  - 非技术用户友好
+  - 支持动态任务分配
 - **技术实现**：
-  - `autogen-core`：底层消息传递和Agent运行时
-  - `autogen-agentchat`：高级Agent对话API
-  - `autogen-ext`：生态集成和工具扩展
-  - `autogen-studio`：可视化工作流设计
+  - 角色分工明确：研究员、分析师、创作者等
+  - 构建在LangChain之上
+  - 支持多数LLM服务提供商
 
 #### 适用场景
-- 代码生成和软件开发任务 <mcreference link="https://my.oschina.net/IDP/blog/16578213" index="3">3</mcreference>
-- 复杂的多Agent编程工作流
-- 需要人工指导的智能对话系统
+- 内容创作和协作任务 <mcreference link="https://llmtrend.com/ai-agent-2/" index="1">1</mcreference>
+- 快速任务演示和原型验证 <mcreference link="https://my.oschina.net/IDP/blog/16578213" index="3">3</mcreference>
+- 简单的多Agent协作场景
 
 #### 局限性
-- **学习成本高**：需要编程基础和AI框架理解 <mcreference link="https://llmtrend.com/ai-agent-2/" index="1">1</mcreference>
-- **配置复杂**：本地LLM部署需要额外代理服务器配置 <mcreference link="https://my.oschina.net/IDP/blog/16578213" index="3">3</mcreference>
-- **非编程任务表现一般**：在非软件开发领域优势不明显
+- **灵活性限制**：定制化能力相对较弱 <mcreference link="https://my.oschina.net/IDP/blog/16578213" index="3">3</mcreference>
+- **复杂任务能力不足**：不适合复杂编程任务
+- **Agent交互问题**：偶尔出现协作故障
+- **社区支持较弱**：技术社区相对较小
 
 ### 2. LangGraph (LangChain)
 
@@ -97,14 +98,14 @@
 
 #### 开发成本
 1. **学习成本**：
-   - CrewAI < AutoGen < LangGraph
+   - CrewAI < LangGraph
    - CrewAI：1-2周快速上手
-   - AutoGen：2-4周掌握基础
+   - CrewAI：1-2周掌握基础
    - LangGraph：4-8周深入理解
 
 2. **开发时间**：
    - CrewAI：快速原型，1-2天MVP
-   - AutoGen：中等复杂度，1-2周MVP
+   - CrewAI：低复杂度，1周MVP
    - LangGraph：高度定制，2-4周MVP
 
 #### 运营成本
@@ -123,22 +124,22 @@
 
 1. **多模态支持**：
    - LangGraph：★★★★★（原生多模态支持）
-   - AutoGen：★★★★☆（通过扩展支持）
+   - CrewAI：★★★☆☆（基础支持）
    - CrewAI：★★★☆☆（基础多模态）
 
 2. **知识图谱集成**：
    - LangGraph：★★★★★（灵活的状态管理）
-   - AutoGen：★★★★☆（可定制集成）
+   - CrewAI：★★★☆☆（有限定制）
    - CrewAI：★★★☆☆（简单集成）
 
 3. **多Agent协作**：
    - CrewAI：★★★★★（专为协作设计）
-   - AutoGen：★★★★★（强大的对话系统）
+   - CrewAI：★★★★☆（良好的协作系统）
    - LangGraph：★★★★☆（需要自定义实现）
 
 4. **快速迭代**：
    - CrewAI：★★★★★（快速原型）
-   - AutoGen：★★★☆☆（中等速度）
+   - CrewAI：★★★★☆（快速开发）
    - LangGraph：★★☆☆☆（开发周期长）
 
 ## 组合使用策略
@@ -153,7 +154,7 @@
 
 #### 方案二：渐进式演进
 1. **MVP阶段**：使用CrewAI快速验证
-2. **功能扩展**：引入AutoGen处理复杂对话
+2. **功能扩展**：引入CrewAI处理多Agent协作
 3. **深度优化**：使用LangGraph重构核心模块
 
 ## 专业推荐
@@ -198,7 +199,7 @@
 - 最佳的开源模型支持
 - 长期技术债务最少
 
-#### ❌ 不推荐：纯AutoGen方案
+#### ❌ 不推荐：纯LangGraph方案
 
 **原因**：
 - 与项目需求匹配度不高（偏向代码生成）
@@ -242,7 +243,7 @@
    - 支持多设备同步
 
 3. **知识图谱集成**：
-   - LightRAG + LangGraph深度集成
+   - CrewAI + LangGraph深度集成
    - 动态词汇关系构建
    - 智能推荐算法
 

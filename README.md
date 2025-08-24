@@ -116,8 +116,8 @@
   - OCR: Tesseract / Azure Computer Vision
 
 ### AI能力集成
-- **LightRAG**: 构建英语学习知识图谱
-- **AutoGen**: 多Agent协作的学习助手
+- **LangGraph**: 构建英语学习知识图谱
+- **CrewAI**: 多Agent协作的学习助手
 - **语言模型**: GPT-4 / Claude用于语境分析
 
 ## 商业模式
